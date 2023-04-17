@@ -10,7 +10,10 @@ ENV DEBUGGER "/usr/local/bin/box86"
 RUN ./steamcmd.sh +@sSteamCmdForcePlatformBitness 64 +@sSteamCmdForcePlatformType linux +login anonymous +force_install_dir /root/server +app_update 996560 validate +quit
 
 # Specific
+
 EXPOSE 7777-7777/udp
 WORKDIR /root
-COPY init .
-CMD ["/bin/bash", "/root/init"]
+
+COPY init.sh .
+RUN chmod +x init.sh
+CMD ["/bin/bash", "/root/init.sh"]
