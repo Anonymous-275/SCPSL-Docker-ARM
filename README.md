@@ -6,4 +6,6 @@ there is a custom init script that then launches the server
 
 to build simply run
 
-sudo docker build --no-cache -f SCPSL.Dockerfile  -t custom-scpsl .
+sudo docker build --no-cache -f SCPSL.Dockerfile  -t scpsl-arm .
+
+then you should have an image with the tag scpsl-arm! Enjoy.
